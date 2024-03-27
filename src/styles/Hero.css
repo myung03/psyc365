@@ -1,0 +1,103 @@
+img, #cube {
+  object-fit: cover;
+}
+
+.hero-section {
+  position: relative;
+  min-height: 30em; 
+  max-height: 60em;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5F5F5;
+  z-index: 1;
+  margin-bottom: 20px; 
+}
+
+@media (max-height:600px) {
+  .hero-section {
+    min-height: 45em; 
+  }
+}
+
+.cubic-container {
+  position: relative;
+  z-index: 3;
+}
+
+#cube {
+  margin-top: 5%;
+  transform: translateY(15%);
+  transition: all 0.25s ease;
+  scale: 1;
+  width: 40em;
+  height: 40em;  
+  z-index: 300;
+  position: relative;
+}
+
+@media (min-width: 1022px) and (max-width: 1400px) {
+  #cube {
+    width: 35em;
+    height: 35em;
+  }
+}
+
+@media (max-width: 1022px) {
+  #cube {
+    width: 35em;
+    height: 35em;
+  }
+}
+
+@media (max-width: 700px) {
+  #cube {
+    width: 30em;
+    height: 30em;
+  }
+}
+
+@media (max-width: 500px) {
+  #cube {
+    width: 30em;
+    height: 30em;
+  }
+}
+
+
+.hero-diag {
+  position: absolute;
+  top: 60%;
+  left: 0%;
+  width: 110%;
+  height: 35%;
+  z-index: 1;
+}
+
+.hero-diag::after {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 40%;
+  width: 110%;
+  height: 100%;
+  background: white;
+  flex-shrink: 0; 
+  transform-origin: 100% 0%;
+  transform: rotate(-5deg) translateX(-50%);
+}
+
+@media (min-width: 1200px) {
+  .hero-diag::after {
+    top: -10%;
+    height: 90%;
+  }
+}
+
+@media (orientation: portrait), (max-width: 500px) {
+  .hero-diag::after {
+    top: 10%;
+    height: 90%;
+  }
+}

@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* 
+.diag-container {
+  height:50vh
+}
+
+.diag-container::before {
+  content: "";
+  display: block;
+  position: relative;
+  height: 50%;
+  width: 300%;
+  left: 50%;
+  top: 0px;
+  -webkit-transform: rotate(-5deg) translateX(-50%)  translateY(-120%);
+  -ms-transform: rotate(-5deg) translateX(-50%)  translateY(-120%);
+  transform: rotate(-5deg) translateX(-50%) translateY(-120%);
+  -webkit-transform-origin: center top;
+  -ms-transform-origin: center top;
+  transform-origin: center top;
+  z-index: 150;
+  background-color: whitesmoke;
+
+}
+
+.diag-container {
+  height: 50vh;
+} */
+
+a:focus, input:focus, textarea:focus, button:focus {
+  outline: 0px solid #96588a;
+      outline-color: rgb(150, 88, 138);
+}
+

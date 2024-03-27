@@ -1,0 +1,21 @@
+ul li {
+    margin-left: 3rem;
+    list-style-type: square;
+}
+
+.system {
+    width: 20%;
+    height: 20%;
+}
+
+.ada {
+    width: 15%;
+    height: 15%;
+}
+.questions > * {
+    margin-bottom: 2%;
+}
+
+.intro-flex {
+    align-items: center;
+}

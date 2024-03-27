@@ -1,0 +1,35 @@
+.page_collapses, .page_collapses2 {
+    margin: 2% 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+a {
+    font-weight: bold;
+}
+
+.vert-container {
+    display: flex;
+    gap: 4%;
+
+}
+
+.page_collapses2 {
+    flex-direction: column;
+    height: 300px;
+
+}
+
+.page_collapses2 > * {
+    margin-bottom: 10px;
+}
+
+.accordion_heading {
+    font-weight: bold;
+    text-align: justify;
+    margin: 1vh;
+    width: 100%;
+    font-size: 1.1em;
+}
+

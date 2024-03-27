@@ -1,0 +1,124 @@
+.ethos-section {
+  position: relative;
+  padding-top: 0.5em;
+  background: #fff;
+  width: 100vw;
+  z-index: 1;
+  display: flex;
+  height: auto; 
+  min-height: 34em; 
+}
+
+.econtainer {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  justify-content: center;
+  height: 35em; 
+}
+
+.ethos-slider-container {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  padding: 30px 0 0; 
+}
+
+.slick-slider {
+  width: 85%; 
+  max-width: 100%;
+  margin: 0 auto; /* Center horizontally */ 
+  padding: 20px 0; /* Add padding to separate slider elements */
+}
+
+
+@media (max-width: 1200px) {
+  .slick-slider {
+    width: 100%; 
+    margin: 0 auto;
+  }
+}
+
+.slick-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.ethos-diag {
+  position: absolute;
+  left: 0;
+  top: 93%; 
+  width: 110%;
+  height: 60%;
+  z-index: 1;
+}
+
+.ethos-diag::after {
+  content: "";
+  position: absolute;
+  top: -30%; /* adjust to pull ABOUT up */
+  left: 40%;
+  width: 100%;
+  height: 100%;
+  background: whitesmoke;
+  transform-origin: 100% 0%;
+  transform: rotate(-5deg) translateX(-50%);
+}
+
+@media (max-width: 1200px) {
+  .ethos-section {
+    min-height: 35em;  
+  }
+
+  .slider-container {
+    padding-top: 50px; 
+  }
+
+  .ethos-slider-container {
+    margin-top: 10%;
+  }
+}
+
+@media (min-width: 1100px) {
+  .ethos-diag::after {
+    top: -75%; 
+  }
+}
+
+/* Initial state for hidden elements */
+.hide-element {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Display state for visible elements */
+.display-element {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.always-display {
+  opacity: 1; 
+}
+
+
+.et-img {
+  margin-top: 2px; 
+}

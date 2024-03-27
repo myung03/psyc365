@@ -1,0 +1,45 @@
+.ethos-element-container {
+  align-items: center;
+  max-height: 300px; 
+}
+
+.ethos-element-content {
+  display: inline-flex;
+  margin-top: auto;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  max-height: 200px; 
+  width: 200px;
+}
+
+.ethos-element-image {
+  width: 130px; 
+  margin-bottom: 4px; 
+}
+.et-content {
+  display: inline-flex;
+  margin-top: auto;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  max-height: 200px; 
+  width: 200px;
+}
+
+.et-img {
+  width: 130px; 
+  scale: 1.6;
+  margin-bottom: 2.3px; 
+}
+
+.caption {
+  font-family: "Beckman";
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-top: 12px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+}

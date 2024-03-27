@@ -1,0 +1,14 @@
+.layout {
+    display: flex;
+    align-items: center;
+}
+
+.layout-graphic {
+   width: 45%;
+   max-width: 500px;
+   max-height: 500px;
+   margin-top: 10%;
+   margin-left: 3%;
+   width: 100%
+
+}

@@ -1,0 +1,80 @@
+#navbar-section {
+    width: 100vw;
+    position: relative;
+}
+
+.navbar-box,
+#navbar-section {
+  @media (orientation:landscape) and (max-height:600px) {
+      min-height: 10em; 
+  }
+}
+
+#logo {
+    align-self: center;
+    display: block;
+    margin-left: auto;
+    scale: 0.9; 
+    margin-right: auto;
+    scale:1.1;
+    margin-left: auto;
+    object-fit: contain;
+    height: 180; 
+    width: 300;
+}
+
+@media (max-width: 800px) {
+    #logo {
+        scale: 0.7;
+    }
+}
+
+.slink, 
+.color-navy {
+    font-family: 'Beckman';
+    font-weight: 500;
+    font-size: 12px;
+    padding-top: 35px;
+    text-indent: 1.25rem;
+}
+
+.color-navy {
+    color: #2A44B5;
+}
+
+.slink {
+    color: black;
+}
+
+.drawer-transition .chakra-modal__content{
+    transition: opacity 0.5s ease-out;
+}
+
+.centered-icon {
+    transform: translateX(-150%);
+    position: absolute;
+}
+
+@media (max-width: 1400px) {
+    .centered-icon {
+       scale: 70%;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.drawer-transition-entering,
+.drawer-transition-exiting,
+.drawer-transition-exited {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease-in-out;
+}
+
+.drawer-transition-entered {
+  opacity: 1;
+  visibility: visible;
+}
+

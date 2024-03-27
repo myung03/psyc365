@@ -1,0 +1,84 @@
+.events-section {
+  position: relative;
+  padding-top: 10px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: max-content; 
+  min-height: 30em; 
+  z-index: 1;
+}
+
+.events-container {
+  position: relative; 
+  z-index: 1;
+  min-height: 25em; 
+  height: max-content;
+  padding: 15px 0 180px;
+  width: 100vw;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white; 
+}
+
+.events-content {
+  text-align: center;
+  align-items: center;
+}
+
+.events-image {
+  padding: 50px 0;
+  width: 100vw;
+  align-self: center;
+  scale: 1.15; 
+  max-width: 100%;
+  height: auto;
+}
+
+.events-desc {
+  margin: auto; 
+  margin-top: 40px; 
+  text-align: left;
+  line-height: 1.65em; 
+  font-family: "Montserrat";
+  font-weight: medium;
+  font-size: 0.9rem;
+  word-spacing: 0.05em;
+  width: 90%
+}
+
+.events-diag {
+  position: absolute;
+  top: 103%;
+  left: 0;
+  width: 110%;
+  height: 60%;
+  z-index: 1;
+}
+
+.events-diag::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 40%;
+  width: 110%;
+  height: 100%;
+  background: whitesmoke;
+  transform-origin: 100% 0%;
+  transform: rotate(-5deg) translateX(-50%);
+}
+
+@media (min-width: 900px) {
+  .events-diag::after {
+      top: -50%;
+  }
+}
+
+@media (min-aspect-ratio: 1.75/1) {
+  .events-diag::after {
+      top: -60%; 
+  }
+}

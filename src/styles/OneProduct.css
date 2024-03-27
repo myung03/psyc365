@@ -1,0 +1,42 @@
+.product-container {
+  position: relative;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+}
+
+
+.product-icon {
+  width: 160px;
+  height: 180px;
+  align-self: center; 
+  margin: 0;
+
+}
+
+@media (max-width: 800px) {
+.product-icon {
+  max-width: 120px; 
+  max-height: 125px;
+}
+}
+
+.raised { 
+  margin-top: 0; 
+  margin-bottom: 0; 
+}
+
+.product-name {
+  margin-top: 30px;
+  font-family: 'Beckman';
+  font-size: 18px; 
+  text-align: center; 
+  transform: translateY(initial); 
+  transition: transform 0.3s; 
+}
+
+.product-icon:hover + .product-name {
+  transform: translateY(40%); 
+}

@@ -1,0 +1,113 @@
+.goals-section {
+  position: relative;
+  margin: 0;
+  padding-top: 5px;
+  width: 100vw;
+  height: max-content;
+  min-height: 45em;
+  z-index: 1;
+}
+
+.goals-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: max-content;
+  min-height: 50em;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+
+.img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 0;
+  padding: 3%;
+  position: relative; 
+}
+
+
+.desktop-image {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+
+@media (max-width: 800px) {
+  .img-container {
+    justify-content: flex-start;
+    padding: .1%;
+    margin-top: 14%; 
+  }
+
+  .mobile-image {
+    max-width: 102%;
+    max-height: 102%;
+    position: static;
+    transform: none;
+  }
+
+  .goals-section {
+    min-height: 85em; 
+    margin-bottom: 6em;
+  }
+
+  .goals-container {
+    min-height: 80em; 
+  }
+}
+
+
+.goals-diag {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 110%;
+  height: 60%;
+  z-index: 1;
+}
+
+.goals-diag::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 40%;
+  width: 100%;
+  height: 80%;
+  background: whitesmoke;
+  flex-shrink: 0;
+  transform-origin: 100% 0%;
+  transform: rotate(-5deg) translateX(-50%);
+}
+
+@media (max-width: 800px) {
+  .goals-diag::after {
+    top: -2%; 
+  }
+}
+
+@media (max-width: 385px) {
+
+  .goals-container {
+    min-height: 35em; 
+  }
+
+  .goals-section {
+    min-height: 35em; 
+  }
+  .goals-diag::after {
+    top: -10%; 
+  }
+
+  .goals-diag {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 110%;
+    height: 20%;
+    z-index: 1;
+  }
+}

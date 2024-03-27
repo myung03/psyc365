@@ -1,0 +1,110 @@
+#product-panel {
+    position: absolute; 
+}
+
+.panel-container {
+  min-height: max-content; 
+}
+
+.product-name, .product-description, .contact {
+    display: block;
+    margin: 1em 0;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.65em;
+}
+
+.product-name {
+    font-family: Beckman;
+    font-size: 1.175em;
+    letter-spacing: 0.015em;
+}
+
+.product-description, .contact {
+    font-family: Montserrat;
+    font-size: 0.9em;
+}
+
+.product-name.invisible, 
+.product-description.invisible, 
+.contact.invisible {
+    transform: translateY(20%);
+    color: blue; 
+}
+
+.product-name.visible, 
+.product-description.visible, 
+.contact.visible {
+    opacity: 1; 
+    transition-delay: 1s;
+}
+
+.product-name.visible {
+    color: red; 
+}
+
+.contact.visible {
+    transform: translateY(-0.5em);
+}
+
+.button.visible {
+    transform: translateY(-5em);
+}
+
+.close-button {
+    align-self: left;
+    height: 40px;
+    width: 40px;
+}
+
+
+body{
+  background-color: black;
+}
+
+.close-container{
+  position: relative;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftright{
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: black;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.rightleft{
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: black;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+.close-container:hover .leftright{
+  transform: rotate(-45deg);
+  background-color: grey;
+}
+.close-container:hover .rightleft{
+  transform: rotate(45deg);
+  background-color: grey;
+}
+.close-container:hover label{
+  opacity: 1;
+}
+
