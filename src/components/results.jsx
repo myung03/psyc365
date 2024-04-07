@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Button } from '@chakra-ui/react'
+import { Heading, Text, Button } from '@chakra-ui/react'
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons'
-import { Page, Heading } from './export'
+import { Page } from './export'
 
 /* Note that styles such as .page, .head, .next, etc. are in Manual.css to reduce repetition */
 
