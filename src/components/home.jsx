@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react' 
+import { Heading, Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react' 
 import '../styles/Manual.css'
 import { Intro } from './export'
 import { Methods } from './export'
 import { Results } from './export'
 import { Conclusion } from './export'
+import brain from '../images/brain.png'
 
 const Home = () => {
   const [curr, setCurr] = useState(-1)
@@ -14,6 +15,7 @@ const Home = () => {
   }
     return (
       <>
+      <img src={brain} className="center" />
       <Tabs size='md' variant='enclosed' className='tabs'>
       <TabList className='headers'>
         <Tab onClick={() => onPageChange(0)}>Introduction</Tab>
