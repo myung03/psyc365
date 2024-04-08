@@ -5,7 +5,6 @@ import Intro from './intro';
 import Methods from './methods';
 import Results from './results';
 import Conclusion from './conclusion';
-import Discussion from './discussion';
 import Hypotheses from "./hypotheses";
 
 export {
@@ -16,6 +15,5 @@ export {
     Results,
     Conclusion,
     Page,
-    Discussion,
     Hypotheses,
 }
