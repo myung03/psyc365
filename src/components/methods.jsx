@@ -109,7 +109,6 @@ const Methods = ({curr}) => {
   return (
     <>
     <section className='page'>
-      <Heading as='h1' size='xl' textAlign='center'>Research Design</Heading>
         {renderContent()}
         </section>
       {page > 0 && <Button leftIcon={<ArrowBackIcon/>} className='back' onClick={() => setPage(page - 1)}>Back</Button>}

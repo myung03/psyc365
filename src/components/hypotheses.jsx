@@ -49,7 +49,6 @@ const Hypotheses = ({curr}) => {
   return (
     <>
       <section className='page'>
-        <Heading as='h1' size='xl' textAlign='center'>Research questions/Hypotheses</Heading>
         {renderContent()}
       </section>
       {page > 0 && <Button leftIcon={<ArrowBackIcon/>} className='back' onClick={() => setPage(page - 1)}>Back</Button>}

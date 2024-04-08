@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import {
-  Heading, Text, Button, VStack, HStack, Highlight, Link, Tooltip, Collapse, Box, useColorModeValue, ScaleFade
+  Heading, Text, Button, VStack, HStack, Highlight, Link, Tooltip, Collapse, Box, useColorModeValue, ScaleFade, Step, Stepper, StepIndicator, StepStatus, StepIcon, StepNumber, StepTitle, StepDescription, StepSeparator
 } from '@chakra-ui/react';
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
 import { Page } from './export';
@@ -14,6 +14,8 @@ const Intro = ({curr}) => {
 
   const bg = useColorModeValue("purple.500", "purple.700");
   const color = useColorModeValue("white", "gray.200");
+
+  const steps = [1,2,3,4]
 
   const handleToggle = () => setShow(!show);
   useEffect(() => {
@@ -125,12 +127,26 @@ const Intro = ({curr}) => {
         </ScaleFade>
       </VStack>
       )
-    }
+    } 
   };
 
   return (
     <>
       <section className='page'>
+        <Stepper index={page}>
+        {steps.map((step, index) => (
+        <Step key={index}>
+          <StepIndicator>
+            <StepStatus
+              complete={<StepIcon />}
+              incomplete={<StepNumber />}
+              active={<StepNumber />}
+            />
+          </StepIndicator>
+          <StepSeparator />
+        </Step>
+      ))}
+        </Stepper>
         {renderContent()}
       </section>
       {page > 0 && <Button leftIcon={<ArrowBackIcon/>} className='back' onClick={() => setPage(page - 1)}>Back</Button>}
