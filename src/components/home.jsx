@@ -16,7 +16,7 @@ const Home = () => {
       <Tabs size='md' variant='enclosed' className='tabs'>
       <TabList className='headers'>
         <Tab onClick={() => onPageChange(0)}>Introduction</Tab>
-        <Tab onClick={() => onPageChange(1)}>Hypotheses and Questions</Tab>
+        <Tab onClick={() => onPageChange(1)}>Question and Hypotheses</Tab>
         <Tab onClick={() => onPageChange(2)}>Research Design</Tab>
         <Tab onClick={() => onPageChange(3)}>Results</Tab>
         <Tab onClick={() => onPageChange(4)}>Discussion</Tab>

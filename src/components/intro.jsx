@@ -1,10 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import {
-  Heading, Text, Button, VStack, HStack, Highlight, Link, Tooltip, Collapse, Box, useColorModeValue, ScaleFade, Step, Stepper, StepIndicator, StepStatus, StepIcon, StepNumber, StepTitle, StepDescription, StepSeparator
+  Heading, Text, Button, VStack, HStack, Highlight, Link, Tooltip, Collapse, Box, useColorModeValue, ScaleFade, Step, Stepper, StepIndicator, StepStatus, StepIcon, StepNumber, StepSeparator
 } from '@chakra-ui/react';
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
-import { Page } from './export';
 
 /* Note that styles such as .page, .head, .next, etc. are in Manual.css to reduce repetition */
 
@@ -40,7 +39,7 @@ const Intro = ({curr}) => {
             Project Introduction
           </Heading>
           <Text textAlign="center" lineHeight="taller">
-            Hi there - we're Janaye, Indira and Matthew, and we built this website for our PSYC 365 Project! The project is based on a paper titled <Highlight query='Inter-brain synchronization occurs without physical co-presence during cooperative online gaming' styles={{ px: '2', py: '1', rounded: 'full', bg: 'orange.100' }}>Inter-brain synchronization occurs without physical co-presence during cooperative online gaming</Highlight>, and is a a collaborative effort to help readers gain insights into the incredible work done by the authors. Published in <Highlight query='Neuropsychologia' styles={{ px: '2', py: '1', rounded: 'full', bg: 'red.100' }}>Neuropsychologia</Highlight>, 2022, it explores the nuances of interpersonal synchronization in digital interactions. You can view the citation to see more information about the authors, journal, and year, and access the paper through the options below. Throughout this website, hover over the underlined terms to learn more about them!
+            Hi there - we're Janaye, Indira and Matthew, and we built this website for our PSYC 365 Project! The project is based on a paper titled <Highlight query='Inter-brain synchronization occurs without physical co-presence during cooperative online gaming' styles={{ px: '2', py: '1', rounded: 'full', bg: 'orange.100' }}>Inter-brain synchronization occurs without physical co-presence during cooperative online gaming</Highlight>, and is a collaborative effort to help readers gain insights into the incredible work done by the authors. Published in <Highlight query='Neuropsychologia' styles={{ px: '2', py: '1', rounded: 'full', bg: 'red.100' }}>Neuropsychologia</Highlight>, 2022, it explores the nuances of interpersonal synchronization in digital interactions. You can view the citation to see more information about the authors, journal, and year, and access the paper through the options below. Throughout this website, hover over the underlined terms to learn more about them!
           </Text>
           <HStack spacing={10}>
             <Tooltip hasArrow label="Wikström, V., Saarikivi, K., Falcon, M., Makkonen, T., Martikainen, S., Putkinen, V., Cowley, B. U., & Tervaniemi, M. (2022). Inter-brain synchronization occurs without physical co-presence during cooperative online gaming. Neuropsychologia, 174, 108316. https://doi.org/10.1016/j.neuropsychologia.2022.108316" bg="blue.100" color="black">
@@ -104,7 +103,7 @@ const Intro = ({curr}) => {
         <Button mt={10} size="lg" onClick={handleToggle} colorScheme="purple">
           Let's ask the big picture question...
         </Button>
-        <ScaleFade in={show} initialScale={0.9}>
+        <ScaleFade in={show} initialScale={0.7}>
           <Box
             p="40px"
             color={color}
@@ -113,8 +112,8 @@ const Intro = ({curr}) => {
             rounded="md"
             shadow="xl"
             textAlign="center"
-            borderWidth="1px"
-            borderColor="purple.300"
+            borderWidth="3px"
+            borderColor="purple.200"
             transform="scale(1.05)"
             transition="all 0.3s ease-in-out"
           >

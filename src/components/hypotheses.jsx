@@ -1,14 +1,25 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Heading, Text, Button } from '@chakra-ui/react'
+import { Heading, Highlight, VStack, ScaleFade, Box, Button, useColorModeValue, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon,
+Stepper, Step, StepIndicator, StepNumber, StepIcon, StepStatus, StepSeparator } from '@chakra-ui/react'
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons'
-import { Page } from './export'
 
 /* Note that styles such as .page, .head, .next, etc. are in Manual.css to reduce repetition */
 
 const Hypotheses = ({curr}) => {
-
   const [page, setPage] = useState(0);
+  const [show, setShow] = useState(false);
+  const steps = [1, 2]
+
+  const bg = useColorModeValue("blue.500", "blue.700");
+  const color = useColorModeValue("white", "gray.200");
+
+  const handleToggle = () => setShow(!show);
+  useEffect(() => {
+    if (curr !== 0) {
+      setPage(0);
+    }
+  }, [curr]);
 
   useEffect(() => {
     if (curr !== 0) {
@@ -28,31 +39,107 @@ const Hypotheses = ({curr}) => {
   const renderContent = () => {
     if (page === 0) {
       return <>
-        <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Research questions/Hypotheses</Heading>
-        <Text marginTop="24px">Interpersonal synchronization occurs when individuals perform simultaneous or closely timed actions together. The extent of inter-brain synchrony between individuals has historically been measured by comparing the temporal dynamics and oscillatory activity of individuals during collaborative tasks; research has shown that the level of neural coupling during interpersonal synchronization between individuals is correlated with an increase in social bonding, cooperation, and team performance.</Text>
+         <VStack spacing={4} p={5} align="center">
+        <Button mt={10} size="lg" onClick={handleToggle} colorScheme="blue">
+          Now, what was their research question? 
+        </Button>
+        <ScaleFade in={show} initialScale={0.7}>
+          <Box
+            p="40px"
+            color={color}
+            mt="4"
+            bg={bg}
+            rounded="md"
+            shadow="xl"
+            textAlign="center"
+            borderWidth="3px"
+            borderColor="blue.200"
+            transform="scale(1.05)"
+            transition="all 0.3s ease-in-out"
+          >
+            <Heading as="h2" size="xl" mb={4} decoration="underline">
+            </Heading>
+            <Heading as="h3" size="xl"fontWeight="bold"  mb={4} >
+            Do physically isolated participants engaging in a cooperative multiplayer game exhibit inter-brain phase synchronization, and how does synchronization correlate with their performance in the collaborative task?
+            </Heading>
+          </Box>
+        </ScaleFade>
+      </VStack>
         </>
-    } else if (page == 1) {
-      return <>
-        <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Knowledge Gap</Heading>
-        <Text marginTop="24px">However, previous research has only studied synchronization between people physically interacting and has not yet investigated the effects of synchronization when humans are not able to observe each other directly and instead through a digital interface. It is valuable to study this, with social interaction increasingly happening on online platforms, to observe if social cohesion is still facilitated even under these circumstances.</Text>
-      </>
-    } else if (page == 2) {
-      return <>
-        <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Big Picture Question</Heading>
-        <Text marginTop="24px">How does online/virtual collaboration impact inter-brain synchrony and corresponding prosocial performance?</Text>
-        <Heading as='h2' size='lg' textAlign='center' >Hypothesis</Heading>
-        <Text marginTop="24px">Shared attention, interaction, and cooperation in the real-time online game would produce inter-brain synchrony, measured as the circular correlation coefficient (CCorr) of different frequencies within electrodes in specific canonical networks (frontal, frontocentral, central, temporoparietal, parietal and occipital regions).</Text>
-      </>
-    }
+    } else if (page === 1) {
+      return (<Box p={5}>
+        <Heading as="h2" size="lg" textAlign="center" mb={4}>
+          Hypothesis
+        </Heading>
+        <Accordion allowToggle allowMultiple>
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  Main Hypothesis (Hypothesis 1)
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              The study hypothesized that <Highlight query='cooperative action by physically isolated participants' styles={{ px: '2', py: '1', rounded: 'md', bg: 'green.100' }}>cooperative action by physically isolated participants</Highlight> would lead to inter-brain phase synchronization during a collaborative multiplayer game.
+            </AccordionPanel>
+          </AccordionItem>
+      
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  Connection to Performance (Hypothesis 2)
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              Additionally, it hypothesized that such synchronization is <Highlight query='connected to performance' styles={{ px: '2', py: '1', rounded: 'md', bg: 'yellow.100' }}>connected to performance</Highlight> in the collaborative task, expecting to find positive links between <Highlight query='inter-brain synchrony and task performance' styles={{ px: '2', py: '1', rounded: 'md', bg: 'yellow.100' }}>inter-brain synchrony and task performance</Highlight>.
+            </AccordionPanel>
+          </AccordionItem>
+      
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  Broader Implications
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              These hypotheses aimed to <Highlight query='understand the dynamics of inter-brain synchronization' styles={{ px: '2', py: '1', rounded: 'md', bg: 'red.100' }}>understand the dynamics of inter-brain synchronization</Highlight> in a context devoid of physical co-presence and direct communication, focusing on the effects of mediated virtual interaction on <Highlight query='neural coupling and its impact on cooperative task success' styles={{ px: '2', py: '1', rounded: 'md', bg: 'red.100' }}>neural coupling and its impact on cooperative task success</Highlight>.
+            </AccordionPanel>
+          </AccordionItem>
+        </Accordion>
+      </Box>
+      )
+    } 
   }
 
   return (
     <>
       <section className='page'>
+      <Stepper index={page}>
+        {steps.map((step, index) => (
+        <Step key={index}>
+          <StepIndicator>
+            <StepStatus
+              complete={<StepIcon />}
+              incomplete={<StepNumber />}
+              active={<StepNumber />}
+            />
+          </StepIndicator>
+          <StepSeparator />
+        </Step>
+      ))}
+        </Stepper>
         {renderContent()}
       </section>
       {page > 0 && <Button leftIcon={<ArrowBackIcon/>} className='back' onClick={() => setPage(page - 1)}>Back</Button>}
-      {page < 2 && <Button rightIcon={<ArrowForwardIcon/>} className='next' onClick={() => setPage(page + 1)}>Next</Button>}
+      {page < 1 && <Button rightIcon={<ArrowForwardIcon/>} className='next' onClick={() => setPage(page + 1)}>Next</Button>}
     </>
   )
 }
