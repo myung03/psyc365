@@ -5,6 +5,8 @@ import Intro from './intro';
 import Methods from './methods';
 import Results from './results';
 import Conclusion from './conclusion';
+import Discussion from './discussion';
+import Hypotheses from "./hypotheses";
 
 export {
     Heading,
@@ -13,5 +15,7 @@ export {
     Methods,
     Results,
     Conclusion,
-    Page
+    Page,
+    Discussion,
+    Hypotheses,
 }
