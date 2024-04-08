@@ -71,7 +71,7 @@ const Results = ({curr}) => {
         <Image
           src={figure3}
           alt="Synchrony Levels Visualization"
-          objectFit="cover"
+          objectFit="fit"
           boxSize="100%"
         />
       </GridItem>
@@ -115,7 +115,7 @@ const Results = ({curr}) => {
         <Image
           src={figure4}
           alt="Linear Regression Models"
-          objectFit="cover"
+          objectFit="fit"
           boxSize="100%"
         />
       </GridItem>
