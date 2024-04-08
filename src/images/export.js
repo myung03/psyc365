@@ -6,6 +6,8 @@ import track3 from './track3.png'
 import track4 from './track4.png'
 import figure3 from './figure3.png'
 import figure4 from './figure4.png'
+import table1 from './table1.png'
+import table2 from './table2.png'
 
 export {
     Brain,
@@ -15,5 +17,7 @@ export {
     track3,
     track4,
     figure3,
-    figure4
+    figure4,
+    table1, 
+    table2
 }
