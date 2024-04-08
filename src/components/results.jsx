@@ -7,8 +7,8 @@ import { Page } from './export'
 /* Note that styles such as .page, .head, .next, etc. are in Manual.css to reduce repetition */
 
 const Results = ({curr}) => {
-
   const [page, setPage] = useState(0);
+  const steps = [1,2,3,4]
 
   useEffect(() => {
     if (curr !== 0) {

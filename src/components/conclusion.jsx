@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Heading, Text, Button, UnorderedList, ListItem } from '@chakra-ui/react'
+import { Heading, Text, Button, UnorderedList, ListItem, Step, Stepper, StepIndicator, StepStatus, StepIcon, StepNumber, StepSeparator } from '@chakra-ui/react'
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons'
 import { Page } from './export'
 
@@ -9,6 +9,7 @@ import { Page } from './export'
 const Conclusion = ({curr}) => {
 
   const [page, setPage] = useState(0);
+  const steps = [1,2,3,4,5]
 
   useEffect(() => {
     if (curr !== 0) {
@@ -48,10 +49,24 @@ const Conclusion = ({curr}) => {
   return (
     <>
       <section className='page'>
+      <Stepper index={page}>
+        {steps.map((step, index) => (
+        <Step key={index}>
+          <StepIndicator>
+            <StepStatus
+              complete={<StepIcon />}
+              incomplete={<StepNumber />}
+              active={<StepNumber />}
+            />
+          </StepIndicator>
+          <StepSeparator />
+        </Step>
+      ))}
+        </Stepper>
         {renderContent()}
       </section>
       {page > 0 && <Button leftIcon={<ArrowBackIcon/>} className='back' onClick={() => setPage(page - 1)}>Back</Button>}
-      {page < 1 && <Button rightIcon={<ArrowForwardIcon/>} className='next' onClick={() => setPage(page + 1)}>Next</Button>}
+      {page < 4 && <Button rightIcon={<ArrowForwardIcon/>} className='next' onClick={() => setPage(page + 1)}>Next</Button>}
     </>
   )
 }
