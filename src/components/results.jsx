@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Heading, Text, Button, UnorderedList, ListItem, Box, Image, Grid, GridItem} from '@chakra-ui/react'
+import { Heading, Text, Button, UnorderedList, ListItem, Box, Image, Grid, GridItem, Step, Stepper, StepIndicator, StepStatus, StepIcon, StepNumber, StepSeparator } from '@chakra-ui/react'
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons'
 import { Page } from './export'
 import { RESULTS } from '../texts/export'
@@ -13,7 +13,7 @@ import { table2 } from '../images/export'
 
 const Results = ({curr}) => {
   const [page, setPage] = useState(0);
-  const steps = [1,2,3,4]
+  const steps = [1,2]
 
   useEffect(() => {
     if (curr !== 0) {
@@ -241,6 +241,20 @@ const Results = ({curr}) => {
   return (
     <>
       <section className='page'>
+      <Stepper index={page}>
+        {steps.map((step, index) => (
+        <Step key={index}>
+          <StepIndicator>
+            <StepStatus
+              complete={<StepIcon />}
+              incomplete={<StepNumber />}
+              active={<StepNumber />}
+            />
+          </StepIndicator>
+          <StepSeparator />
+        </Step>
+      ))}
+        </Stepper>
         {renderContent()}
         </section>
       {page > 0 && <Button leftIcon={<ArrowBackIcon/>} className='back' onClick={() => setPage(page - 1)}>Back</Button>}

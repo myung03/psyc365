@@ -9,7 +9,7 @@ import { Page } from './export'
 const Conclusion = ({curr}) => {
 
   const [page, setPage] = useState(0);
-  const steps = [1,2,3,4,5]
+  const steps = [1,2]
 
   useEffect(() => {
     if (curr !== 0) {
@@ -41,7 +41,17 @@ const Conclusion = ({curr}) => {
         </>
     } else if (page == 1) {
       return <>
-        <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Final Thoughts</Heading>
+        <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Conclusion and Future Directions</Heading>
+        <UnorderedList marginTop="24px">
+          <ListItem>Significance in examining results is associated with the following:
+            <UnorderedList>
+              <ListItem>Optimization of virtual multi-user environments (ie. software and virtual call environments due to context of Covid-19)</ListItem>
+              <ListItem>Development of virtual activities and tasks that enhance synchronization between individuals</ListItem>
+            </UnorderedList>
+          </ListItem>
+          <ListItem>Future studies could investigate the effects of inter-brain synchrony in a larger, more diverse population to determine if the results are consistent across different relationships.</ListItem>
+          <ListItem>It would also be interesting to explore the effects of inter-brain synchrony on various tasks to determine if the results are task-specific or if they can be generalized to other types of digital collaborative activities.</ListItem>
+        </UnorderedList>
       </>
     }
   }
@@ -66,7 +76,7 @@ const Conclusion = ({curr}) => {
         {renderContent()}
       </section>
       {page > 0 && <Button leftIcon={<ArrowBackIcon/>} className='back' onClick={() => setPage(page - 1)}>Back</Button>}
-      {page < 4 && <Button rightIcon={<ArrowForwardIcon/>} className='next' onClick={() => setPage(page + 1)}>Next</Button>}
+      {page < 1 && <Button rightIcon={<ArrowForwardIcon/>} className='next' onClick={() => setPage(page + 1)}>Next</Button>}
     </>
   )
 }
