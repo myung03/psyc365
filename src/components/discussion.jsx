@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Heading, Text, Button, UnorderedList, ListItem } from '@chakra-ui/react'
-import { Image, Box, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, } from '@chakra-ui/react'
+import { Heading, Text, Button, UnorderedList, ListItem, Flex, Tooltip, Highlight } from '@chakra-ui/react'
+import { Image, Box, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton } from '@chakra-ui/react'
 import { Page } from './export'
+import { figure3 } from '../images/export'
 import { alpha, beta, gamma, communication } from '../images/export'
 
 /* Note that styles such as .page, .head, .next, etc. are in Manual.css to reduce repetition */
@@ -10,6 +11,7 @@ import { alpha, beta, gamma, communication } from '../images/export'
 const Discussion = ({curr}) => {
 
   const [page, setPage] = useState(0);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     if (curr !== 0) {
@@ -37,90 +39,107 @@ const Discussion = ({curr}) => {
 
         <Accordion>
         <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box as="span" flex='1' textAlign='left'>
-          <Text fontSize="lg" fontWeight="bold">Overall Findings</Text>
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-      <Text>
-      The findings of the study present strong evidence that virtual collaboration can effectively foster synchrony among participants, as demonstrated by significant results across various regions of interest (ROIs) and frequency bands (alpha, beta, and gamma) of brain waves. Despite the lack of face-to-face interaction and physical proximity among participant pairs, the act of coordinating and sharing tasks within virtual environments was enough to elicit statistically significant differences in both mean and momentary synchrony levels, as shown in Figure 3. This was particularly evident when comparing cooperative pairs with a shared task against control pairs selected based on performance alone. Notably, task performance emerged as a crucial predictor of alpha wave synchrony, suggesting that the success of collaboration is intimately linked with the participants’ ability to align their brain activity within the alpha band, which is associated with states of attention and relaxation. Furthermore, factors such as time and visuospatial skills underscore how both external conditions and individual-specific characteristics influence the temporal dynamics of brain wave activity and the distribution of cognitive resources between collaborative engagement and individual attention spans. The focus of this study on real-time task performance highlights how individuals engaged in social tasks navigate concurrent attentional and inhibitory processes, managing motor actions while remaining cognizant of their partner's behaviors and intentions. This research opens up new frontiers for investigating virtual tasks that impose lower cognitive demands in the motor and perceptual realms, probing into how processes like mentalization and theory of mind function within networked environments and online social platforms. An in-depth analysis of the implications for each of the three oscillation bands is provided in the subsequent discussion.
+  <h2>
+    <AccordionButton>
+      <Box as="span" flex="1" textAlign="left">
+        <Text fontSize="lg" fontWeight="bold">Overall Findings</Text>
+      </Box>
+      <AccordionIcon />
+    </AccordionButton>
+  </h2>
+  <AccordionPanel pb={4}>
+    <Flex direction={["column", "row"]} alignItems="center" justifyContent="space-between">
+      <Text flex="1" marginRight="20px">
+        The study shows that <Highlight query="virtual collaboration leads to synchrony among participants" styles={{ px: '2', py: '1', rounded: 'full', bg: 'blue.100' }}>virtual collaboration leads to synchrony among participants</Highlight> across key brain regions and wave bands, even without physical interaction. Significant differences in synchrony levels indicate effective task coordination within virtual environments. Task performance, especially within the alpha wave band, <Highlight query="correlates with the success of collaboration" styles={{ px: '2', py: '1', rounded: 'full', bg: 'green.100' }}>correlates with the success of collaboration</Highlight>, highlighting the importance of attention and relaxation states in aligning brain activity. Time and visuospatial skills play roles in influencing <Tooltip label="Cognitive resource distribution refers to how mental processing capacity is allocated across different tasks and cognitive demands." aria-label="Tooltip for Cognitive Resource Distribution">
+          <span style={{ textDecoration: "underline" }}>cognitive resource distribution</span>
+        </Tooltip> and attention spans during collaborative tasks. This study opens avenues for further research into virtual tasks with lower cognitive demands, examining <Tooltip label="Mentalization is the ability to understand the mental state, of oneself or others, that underlies overt behavior." aria-label="Tooltip for Mentalization">
+          <span style={{ textDecoration: "underline" }}>mentalization</span>
+        </Tooltip> and theory of mind in networked environments.
       </Text>
+      <Tooltip label="Visual representation of communication findings" aria-label="Tooltip">
+        <Image alignSelf="center" blockSize="200px" src={communication} alt="Communication Findings"/>
+      </Tooltip>
+    </Flex>
+  </AccordionPanel>
+</AccordionItem>
 
-      <Image  alignSelf='center' blockSize={300} marginTop='20px' marginBottom='20px' src={communication}></Image>
-     
-    </AccordionPanel>
-  </AccordionItem>
 
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box as="span" flex='1' textAlign='left'>
-          <Text fontSize="lg" fontWeight="bold">Alpha Waves</Text>
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-      <Text>
-     Throughout the experiment, the inter-synchrony of alpha waves exhibited the strongest statistical significance and stability across various regions of interest. The t-test results showed that both mean p-values and momentary p-values associated with alpha waves were below 0.005, indicating a statistically significant correlation between performance and higher CCorr values. The mean alpha synchrony values in CCorr were 0.010, 0.012, and 0.011 in the frontal, central, and occipital lobes, respectively, suggesting that EEG coordination in these areas was linked to enhanced cognitive function related to attention and visual perception. Furthermore, the mean alpha waves yielded mean p-value differences exceeding 0.054, indicating that there was no statistically significant variance between each ROI, and relative maintenance of alpha synchrony in whole-brain networks. 
-     </Text>
-     <Text>
-     Interestingly, the significance of dyad mean visuospatial test scores from the WAIS was associated with lower inter-synchrony of alpha waves, suggesting that individual cognitive focus and attention may operate independently of joint coordination on alpha frequencies. Considering the existing research highlighting the influence of alpha waves on executive functions, including inhibitory control and focused attention, these findings reveal a nuanced interplay between alpha wave synchrony and cognitive performance. Specifically, the positive correlation between alpha wave synchrony and task performance underscores the potential for synchronized neural activity to enhance cognitive functions related to attentional processes and sensory integration. This relationship suggests that cooperative or shared attentional states, facilitated by alpha synchrony, may amplify the cognitive capabilities necessary for complex tasks. Conversely, the inverse relationship between alpha wave synchrony and individual visuospatial test scores hints at the intricate balance between collective cognitive dynamics and individual cognitive processes. The results raise intriguing questions about the extent to which individual attentional and executive functions are modulated or even optimized in social or collaborative contexts, as opposed to solitary conditions. 
-     </Text>
-     <Text>
-     These findings pave the way for future investigations into the specific cognitive mechanisms that are enhanced through interpersonal neural synchronization, and how individual concentration and focus are uniquely achieved and maintained. This exploration is essential for unraveling the complex interdependencies between shared and individual cognitive processes, potentially leading to novel insights into enhancing cognitive function through targeted interventions that leverage the power of neural synchrony.
-     </Text>
-     <Image src={alpha}></Image>
-     
-    </AccordionPanel>
-  </AccordionItem>
+<AccordionItem>
+  <h2>
+    <AccordionButton>
+      <Box as="span" flex='1' textAlign='left'>
+        <Text fontSize="lg" fontWeight="bold">Alpha Waves</Text>
+      </Box>
+      <AccordionIcon />
+    </AccordionButton>
+  </h2>
+  <AccordionPanel pb={4}>
+    <Text>
+      The alpha wave inter-synchrony showed significant consistency and statistical relevance across different <Tooltip label="Region of Interest" aria-label="ROI Definition"><span style={{ textDecoration: "underline" }}>ROIs</span></Tooltip> (Regions of Interest) during the experiment. The t-test indicated a strong correlation between alpha waves and cognitive performance enhancements, with CCorr values and mean p-values notably below 0.005. The synchrony in the frontal, central, and occipital lobes <Highlight query="suggests a direct link to improved attention and visual perception capabilities" styles={{ px: '2', py: '1', rounded: 'full', bg: 'blue.100' }}>suggests a direct link to improved attention and visual perception capabilities</Highlight>, without significant variance between ROIs, highlighting a stable alpha synchrony throughout the brain.
+    </Text>
+    <Text>
+      Dyad scores from the <Tooltip label="Wechsler Adult Intelligence Scale" aria-label="WAIS Definition"><span style={{ textDecoration: "underline" }}>WAIS</span></Tooltip> <Highlight query="indicated an inverse relationship with alpha wave synchrony" styles={{ px: '2', py: '1', rounded: 'full', bg: 'green.100' }}>indicated an inverse relationship with alpha wave synchrony</Highlight>, suggesting that higher cognitive focus might be achieved independently of alpha frequency coordination. This points to a complex relationship between alpha wave synchrony and cognitive performance, particularly in attentional and sensory integration tasks. The findings suggest that while shared attention states, facilitated by alpha synchrony, can enhance cognitive functions for complex tasks, individual cognitive performance might balance differently within group dynamics.
+    </Text>
+    <Text>
+      These insights open avenues for future research into how interpersonal neural synchronization affects cognitive mechanisms, <Highlight query="potentially offering new strategies for cognitive enhancement through neural synchrony" styles={{ px: '2', py: '1', rounded: 'full', bg: 'orange.100' }}>potentially offering new strategies for cognitive enhancement through neural synchrony</Highlight>.
+    </Text>
+    <Image src={alpha}></Image>
+  </AccordionPanel>
+</AccordionItem>
 
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box as="span" flex='1' textAlign='left'>
-          <Text fontSize="lg" fontWeight="bold">Beta Waves</Text>
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-      <Text>
-      In contrast to alpha and beta frequency bands, beta wave synchrony exhibited the most pronounced negative correlation with time throughout the experiment, diminishing from an initial CCorr value of 0.05 to nearly 0.00, as depicted in Figure 3. This marked reduction in synchrony among participants over time underscores a notable shift away from beta wave coherence, coinciding with enhanced frontal executive functions and a reduction in occipital activity, the latter of which is typically associated with the visual system's initial adaptation to stimuli. Notably, beta synchrony reached a peak of 0.039 in the occipital region, indicating a significantly higher level of synchrony compared to other regions of interest. This suggests that the initial phases of the experiment, which require high attentional resources and visuospatial processing, led to increased beta wave coherence, reflecting the participants' mutual engagement and cognitive alignment during the early stages of adaptation before the gradual onset of cognitive fatigue.
-     </Text>
-     <Text>
-     Furthermore, beta oscillations have been linked to processes involving mentalization and the theory of mind, particularly in the context of evaluating partner behaviors and preferences. This connection points to a heightened state of synchrony and neural activity in the early stages of collaborative efforts, as individuals strive to align their mental states and expectations. The decline in beta synchrony over time may thus reflect a natural progression of group dynamics, where initial high levels of engagement and cognitive attunement give way to more autonomous processing patterns as individuals become accustomed to the collaborative environment. These findings illuminate the complex interplay between different neural synchrony patterns and cognitive functions during collaborative tasks, suggesting avenues for further research into how collective cognitive efforts evolve and how they can be optimized for improved performance and understanding in shared tasks.
-     </Text>
- 
-     <Image src={beta}></Image>
-     
-    </AccordionPanel>
-  </AccordionItem>
 
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box as="span" flex='1' textAlign='left'>
-          <Text fontSize="lg" fontWeight="bold">Gamma Waves</Text>
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-      <Text>
-      Similar to the patterns observed in beta wave behavior, gamma wave activity demonstrated considerable variability in synchrony across different regions of interest, achieving its highest recorded coherence of 0.009 CCorr within the occipital region, notably surpassing the levels found in the frontal region. This discrepancy in gamma wave synchrony, especially when contrasted with the more pronounced coherence observed in both beta and alpha waves, hints at the possibility that the specific tasks undertaken during the experiment—namely, acceleration and steering—may not inherently engage the gamma frequency band in a manner that highlights its collaborative or cognitive potential. The lack of correlation between visuospatial proficiency as measured by WAIS and gamma synchrony suggests that cognitive function related to this specific task of navigation and spatial representation are separated from the coordination of gamma frequencies within collaborative pairs.This observation opens avenues for future research to identify and deploy virtual tasks tailored to effectively harness the unique properties of gamma waves, particularly those that facilitate or require collective cognitive efforts beyond visuospatial navigation.
-     </Text>
-     <Text>
-     Gamma waves are intricately linked with higher cognitive functions, such as mentalization and the understanding of others' mental states, or theory of mind. These aspects suggest that tasks designed to promote social interaction and require ongoing communication might prove more effective in stimulating gamma synchrony. Such tasks provide fertile ground for examining how gamma wave activity supports shared mental processes and collaborative problem-solving. Additionally, the gamma band's association with individual responses to novel stimuli and the capacity for adaptation points to its role in navigating unexpected challenges and adjusting to new information. Investigating how these dynamics play out in social settings, particularly in environments that demand rapid adaptation and coordination, could yield valuable insights into the mechanisms of collective cognition and the neurophysiological substrates that underlie successful collaboration and social interaction.
-     </Text>
-     <Image src={gamma}></Image>
-     
-    </AccordionPanel>
-  </AccordionItem>
+
+<AccordionItem>
+  <h2>
+    <AccordionButton>
+      <Box as="span" flex='1' textAlign='left'>
+        <Text fontSize="lg" fontWeight="bold">Beta Waves</Text>
+      </Box>
+      <AccordionIcon />
+    </AccordionButton>
+  </h2>
+  <AccordionPanel pb={4}>
+    <Text>
+      Beta wave synchrony, initially high, indicating focused engagement and visuospatial processing, showed a pronounced decrease over time, from a CCorr value of 0.05 to nearly 0.00, as illustrated in <Button onClick={onOpen} variant="link" colorScheme="blue" textDecoration="underline">Figure 3</Button>. This trend suggests a shift from <Highlight query="heightened collective cognitive alignment towards reduced coherence" styles={{ px: '2', py: '1', rounded: 'full', bg: 'blue.100' }}>heightened collective cognitive alignment towards reduced coherence</Highlight>, with notable beta synchrony peaking at 0.039 in the occipital region, signifying early stages of high attentional resource utilization and adaptation.
+    </Text>
+    <Text>
+      Furthermore, beta synchrony's initial increase reflects processes of mentalization and theory of mind, essential for evaluating partner behaviors during early collaborative efforts. The decline over time hints at a natural progression from intense engagement to more individualized processing as participants acclimate to the collaborative task, emphasizing the dynamic interplay of neural synchrony with cognitive function and group dynamics.
+    </Text>
+    <Modal isOpen={isOpen} onClose={onClose} size="xl">
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>Figure 3: Beta Wave Synchrony</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <Image src={figure3} alt="Beta Wave Synchrony" />
+        </ModalBody>
+      </ModalContent>
+    </Modal>
+    <Image src={beta}></Image>
+  </AccordionPanel>
+</AccordionItem>
+
+
+
+<AccordionItem>
+  <h2>
+    <AccordionButton>
+      <Box as="span" flex='1' textAlign='left'>
+        <Text fontSize="lg" fontWeight="bold">Gamma Waves</Text>
+      </Box>
+      <AccordionIcon />
+    </AccordionButton>
+  </h2>
+  <AccordionPanel pb={4}>
+    <Text>
+      Gamma wave activity, like beta waves, showed variable synchrony across regions, peaking at 0.009 CCorr in the occipital region, which is higher than in the frontal area. This variation suggests that tasks like acceleration and steering may not engage gamma waves in a way that demonstrates their collaborative or cognitive capacities. The absence of a link between WAIS-measured visuospatial skills and gamma synchrony <Highlight query="indicates a separation of these cognitive functions from gamma wave coordination" styles={{ px: '2', py: '1', rounded: 'full', bg: 'blue.100' }}>indicates a separation of these cognitive functions from gamma wave coordination</Highlight> in tasks requiring navigation and spatial awareness. This finding prompts further research into virtual tasks that can better utilize gamma waves for collective cognitive tasks beyond visuospatial challenges.
+    </Text>
+    <Text>
+      Given gamma waves' connection to higher cognitive functions, including understanding others' mental states, <Highlight query="tasks encouraging social interaction and communication might better stimulate gamma synchrony" styles={{ px: '2', py: '1', rounded: 'full', bg: 'green.100' }}>tasks encouraging social interaction and communication might better stimulate gamma synchrony</Highlight>. Exploring how gamma activity supports joint mental processes and problem-solving, and its role in adapting to new stimuli and challenges in social contexts, could offer insights into collective cognition's neurophysiological foundations and the keys to successful collaboration.
+    </Text>
+    <Image src={gamma}></Image>
+  </AccordionPanel>
+</AccordionItem>
 
 
 </Accordion>
