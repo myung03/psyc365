@@ -53,7 +53,6 @@ const Methods = ({curr}) => {
         <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Procedure</Heading>
         <Text marginTop="24px">During the experiment, subjects were seated in separate electrically and acoustically shielded rooms. The subjects were then individually introduced to the joint coordination task, which was a car racing game where participants attempted to navigate a racing car through various tracks by driving double-decker cars. The person on top was responsible for turning the steering wheel, while the person on the bottom operated the pedals. Subjects were informed that they would be playing the game with their pair and that they would not be able to interact with each other in other ways. They were instructed to work together and to finish as many laps as possible without interacting with each other.
         <br/><br/>While performing the task, the brain activity of the subjects was simultaneously recorded using two EEG systems (Biosemi ActiveTwo, BioSemi B.V., The Netherlands) with 64 active scalp electrodes.
-        <br/>INCLUDE FIGURE 2 HERE
         </Text>
       </>
     } else if (page == 2) {
