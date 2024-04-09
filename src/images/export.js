@@ -8,6 +8,9 @@ import figure3 from './figure3.png'
 import figure4 from './figure4.png'
 import table1 from './table1.png'
 import table2 from './table2.png'
+import alpha from './alphawaves.webp'
+import beta from './betawaves.webp'
+import gamma from './gammawaves.webp'
 
 export {
     Brain,
@@ -19,5 +22,8 @@ export {
     figure3,
     figure4,
     table1, 
-    table2
+    table2,
+    alpha,
+    beta,
+    gamma
 }

@@ -231,7 +231,7 @@ const Results = ({curr}) => {
           Out of the three bands, gamma synchrony was statistically correlated with higher momentary performance (F=4.06, p =0.044) and also impacted by specific ROI (F=7.57, p &lt; 0.001). Time displayed a more pronounced impact on the decrease on momentary gamma synchrony (F = 34.84) than the previous analysis in Figure 2 on overall mean gamma synchrony. 
           </Text>
           <Text mt={2}>
-          Alpha-synchrony levels displayed statistical significance in both time and visuospatial skills as continuous predictors for higher momentary CCorr values; the increase of time was associated with lower momentary alpha inter-synchrony (F = 8.42, p = 0.004) while visuospatial proficiency was found to have a positive effect on alpha synchrony within participant pairs. 
+          Alpha-synchrony levels displayed statistical significance in both time and visuospatial skills as continuous predictors for lower momentary CCorr values, suggesting that alpha waves operated on a form of joint coordination outside of individual visual processing.
           </Text>
        
         </Box>
