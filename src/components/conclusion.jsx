@@ -43,6 +43,7 @@ const Conclusion = ({curr}) => {
       return <>
         <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Conclusion and Future Directions</Heading>
         <UnorderedList marginTop="24px">
+          <ListItem>Overall, the researcher's results indicate that increased inter-brain synchrony is related to improved collaborative task performance.</ListItem>
           <ListItem>Significance in examining results is associated with the following:
             <UnorderedList>
               <ListItem>Optimization of virtual multi-user environments (ie. software and virtual call environments due to context of Covid-19)</ListItem>
@@ -51,6 +52,7 @@ const Conclusion = ({curr}) => {
           </ListItem>
           <ListItem>Future studies could investigate the effects of inter-brain synchrony in a larger, more diverse population to determine if the results are consistent across different relationships.</ListItem>
           <ListItem>It would also be interesting to explore the effects of inter-brain synchrony on various tasks to determine if the results are task-specific or if they can be generalized to other types of digital collaborative activities.</ListItem>
+          <ListItem>In conclusion, synchrony plays a sufficient role in online interaction and it would be interesting to see future studies that continue to study its impact among digital social environments.</ListItem>
         </UnorderedList>
       </>
     }
