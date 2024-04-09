@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Heading, Text, Button, UnorderedList, ListItem } from '@chakra-ui/react'
 import { Image, Box, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, } from '@chakra-ui/react'
 import { Page } from './export'
-import { alpha, beta, gamma } from '../images/export'
+import { alpha, beta, gamma, communication } from '../images/export'
 
 /* Note that styles such as .page, .head, .next, etc. are in Manual.css to reduce repetition */
 
@@ -30,7 +30,10 @@ const Discussion = ({curr}) => {
     if (page === 0) {
       return <>
 
+
         <Heading as='h2' size='lg' textAlign='center' marginTop='30px' marginBottom= '40px'>Discussion</Heading>
+ 
+    
 
         <Accordion>
         <AccordionItem>
@@ -44,12 +47,10 @@ const Discussion = ({curr}) => {
     </h2>
     <AccordionPanel pb={4}>
       <Text>
-      Similar to the patterns observed in beta wave behavior, gamma wave activity demonstrated considerable variability in synchrony across different regions of interest, achieving its highest recorded coherence of 0.009 CCorr within the occipital region, notably surpassing the levels found in the frontal region. This discrepancy in gamma wave synchrony, especially when contrasted with the more pronounced coherence observed in both beta and alpha waves, hints at the possibility that the specific tasks undertaken during the experiment—namely, acceleration and steering—may not inherently engage the gamma frequency band in a manner that highlights its collaborative or cognitive potential. The lack of correlation between visuospatial proficiency as measured by WAIS and gamma synchrony suggests that cognitive function related to this specific task of navigation and spatial representation are separated from the coordination of gamma frequencies within collaborative pairs.This observation opens avenues for future research to identify and deploy virtual tasks tailored to effectively harness the unique properties of gamma waves, particularly those that facilitate or require collective cognitive efforts beyond visuospatial navigation.
-     </Text>
-     <Text>
-     Gamma waves are intricately linked with higher cognitive functions, such as mentalization and the understanding of others' mental states, or theory of mind. These aspects suggest that tasks designed to promote social interaction and require ongoing communication might prove more effective in stimulating gamma synchrony. Such tasks provide fertile ground for examining how gamma wave activity supports shared mental processes and collaborative problem-solving. Additionally, the gamma band's association with individual responses to novel stimuli and the capacity for adaptation points to its role in navigating unexpected challenges and adjusting to new information. Investigating how these dynamics play out in social settings, particularly in environments that demand rapid adaptation and coordination, could yield valuable insights into the mechanisms of collective cognition and the neurophysiological substrates that underlie successful collaboration and social interaction.
-     </Text>
-     <Image src={gamma}></Image>
+      The findings of the study present strong evidence that virtual collaboration can effectively foster synchrony among participants, as demonstrated by significant results across various regions of interest (ROIs) and frequency bands (alpha, beta, and gamma) of brain waves. Despite the lack of face-to-face interaction and physical proximity among participant pairs, the act of coordinating and sharing tasks within virtual environments was enough to elicit statistically significant differences in both mean and momentary synchrony levels, as shown in Figure 3. This was particularly evident when comparing cooperative pairs with a shared task against control pairs selected based on performance alone. Notably, task performance emerged as a crucial predictor of alpha wave synchrony, suggesting that the success of collaboration is intimately linked with the participants’ ability to align their brain activity within the alpha band, which is associated with states of attention and relaxation. Furthermore, factors such as time and visuospatial skills underscore how both external conditions and individual-specific characteristics influence the temporal dynamics of brain wave activity and the distribution of cognitive resources between collaborative engagement and individual attention spans. The focus of this study on real-time task performance highlights how individuals engaged in social tasks navigate concurrent attentional and inhibitory processes, managing motor actions while remaining cognizant of their partner's behaviors and intentions. This research opens up new frontiers for investigating virtual tasks that impose lower cognitive demands in the motor and perceptual realms, probing into how processes like mentalization and theory of mind function within networked environments and online social platforms. An in-depth analysis of the implications for each of the three oscillation bands is provided in the subsequent discussion.
+      </Text>
+
+      <Image  alignSelf='center' blockSize={300} marginTop='20px' marginBottom='20px' src={communication}></Image>
      
     </AccordionPanel>
   </AccordionItem>
@@ -123,6 +124,7 @@ const Discussion = ({curr}) => {
 
 
 </Accordion>
+
 
 
         </>

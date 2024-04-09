@@ -11,6 +11,7 @@ import table2 from './table2.png'
 import alpha from './alphawaves.webp'
 import beta from './betawaves.webp'
 import gamma from './gammawaves.webp'
+import communication from './communication.webp'
 
 export {
     Brain,
@@ -25,5 +26,6 @@ export {
     table2,
     alpha,
     beta,
-    gamma
+    gamma, 
+    communication
 }
