@@ -46,7 +46,7 @@ const Discussion = ({curr}) => {
             <ListItem>Gamma synchrony is less than beta and alpha, suggesting that cognitive load and demands across the experiment related to visuospatial analysis were similar between the two groups</ListItem>
           </UnorderedList>
         </Text>
-        <Text marginTop="8px">Overall, collaboration in the task was associated with higher synchrony in the alpha, beta, and gamma bands, when comparing the synchrony between real pairs and performance-matched false pairs. The hypotheses of the researchers that cues from actions taken by the participants in the game to provide sufficient signals for activating the mechanisms underlying inter-brain synchronization were confirmed.</Text>
+        <Text marginTop="8px">Overall, collaboration in the task was associated with higher synchrony in the alpha, beta, and gamma bands, when comparing the synchrony between real pairs and performance-matched false pairs. The hypotheses of the researchers that cues from actions taken by the participants in the game provide sufficient signals for activating the mechanisms underlying inter-brain synchronization were confirmed.</Text>
         </>
     }
   }
