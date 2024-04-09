@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Heading, Text, Button, UnorderedList, ListItem, Grid, GridItem, Step, Stepper, StepIndicator, StepStatus, StepIcon, StepNumber, StepSeparator } from '@chakra-ui/react'
+import { Heading, Text, Button, UnorderedList, ListItem, Grid, GridItem, Tooltip, Step, Stepper, StepIndicator, StepStatus, StepIcon, StepNumber, StepSeparator } from '@chakra-ui/react'
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons'
 import { Page } from './export'
 import friends from '../images/friends.png'
@@ -85,12 +85,15 @@ const Methods = ({curr}) => {
         <UnorderedList marginTop="24px">
           <ListItem>Inter-brain synchronization measured through EEG, focusing on phase synchronization of oscillatory activity in various frequency bands (alpha, beta, gamma) between the brains of the cooperating participants
             <UnorderedList>
-              <ListItem>Measured through CCorr, or the circular covariant coefficients that were collected from EEG signals of different waves (alpha/beta/gamma) measured for each time segment and region of interest (ROI)</ListItem>
-              <ListItem>CCorr is the circular covariance that calculates the difference in the expected phase value or angles that align with synchronized participants according to the hypothesis with actual (alpha/beta/gamma) wave phases</ListItem>
-              <ListItem>Mathematics works by summing the difference of the sin function of two different channels (participants) being compared; higher CCorr means that: 
+              <ListItem>Measured through 
+                <Tooltip hasArrow label="CCorr is the circular covariance that calculates the difference in the expected phase value or angles that align with synchronized participants according to the hypothesis with actual (alpha/beta/gamma) wave phases" aria-label="Tooltip for CCorr">
+                <span style={{ textDecoration: "underline" }} > CCorr</span>
+                </Tooltip>
+                , or the circular covariant coefficients that were collected from EEG signals of different waves (alpha/beta/gamma) measured for each time segment and region of interest (ROI)</ListItem>
+              <ListItem>Higher CCorr means that: 
                 <UnorderedList>
-                  <ListItem>Variability or deviation between the observed phase angles and the expected phase angles from the participant’s average phase is minimized (the overall variation and dynamics between both participants in terms of leading and lagging is the same)</ListItem>
-                  <ListItem>Participant’s individual brain activity is varying at the same time as their partner, indicating higher synchrony</ListItem>
+                  <ListItem>The difference between the expected and actual timing of brainwaves is smaller, meaning both participants' brain activities are closely matched (they're in sync)</ListItem>
+                  <ListItem>The participants' brain activities change together over time, showing high synchrony or connection between their brain patterns</ListItem>
                 </UnorderedList>
               </ListItem>
             </UnorderedList>
