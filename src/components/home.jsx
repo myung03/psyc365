@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Heading, Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react' 
 import '../styles/Manual.css'
-import { Intro, Methods, Results, Conclusion, Hypotheses } from './export'
+import { Intro, Methods, Results, Conclusion, Hypotheses, Discussion } from './export'
 import brain from '../images/brain.png'
 
 const Home = () => {
@@ -18,8 +18,9 @@ const Home = () => {
         <Tab onClick={() => onPageChange(0)}>Introduction</Tab>
         <Tab onClick={() => onPageChange(1)}>Question and Hypotheses</Tab>
         <Tab onClick={() => onPageChange(2)}>Research Design</Tab>
-        <Tab onClick={() => onPageChange(3)}>Results and Discussion</Tab>
-        <Tab onClick={() => onPageChange(4)}>Conclusion</Tab>
+        <Tab onClick={() => onPageChange(3)}>Results</Tab>
+        <Tab onClick={() => onPageChange(4)}>Discussion</Tab>
+        <Tab onClick={() => onPageChange(5)}>Conclusion</Tab>
       </TabList>
       <TabPanels className="content">
         {/*Each TabPanel contains a component which has manual content */}
@@ -34,6 +35,9 @@ const Home = () => {
         </TabPanel>
         <TabPanel>
         <Results curr={curr}></Results>
+        </TabPanel>
+        <TabPanel>
+          <Discussion curr={curr}></Discussion>
         </TabPanel>
         <TabPanel>
           <Conclusion curr={curr}></Conclusion>

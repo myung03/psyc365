@@ -13,7 +13,7 @@ import { table2 } from '../images/export'
 
 const Results = ({curr}) => {
   const [page, setPage] = useState(0);
-  const steps = [1,2]
+  const steps = [1,2,3]
 
   useEffect(() => {
     if (curr !== 0) {
@@ -34,7 +34,6 @@ const Results = ({curr}) => {
     if (page === 0) {
       return <>
 
-      
         <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Results</Heading>
 
         {/* figure 3 */}
@@ -71,13 +70,18 @@ const Results = ({curr}) => {
         <Image
           src={figure3}
           alt="Synchrony Levels Visualization"
-          objectFit="fit"
           boxSize="100%"
         />
       </GridItem>
     </Grid>
 
-    {/* figure 4 */}
+        </>
+    } else if (page == 1) {
+
+      return <>
+      <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Results</Heading>
+
+      {/* figure 4 */}
 
     <Grid
       templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
@@ -121,10 +125,14 @@ const Results = ({curr}) => {
       </GridItem>
     </Grid>
 
-    {/* tables */}
+      
+      </>
+    } else if (page == 2) {
+      return <>
+      <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Results</Heading>
 
-
-      <Grid
+     {/* tables */}
+     <Grid
   alignContent={'center'}
   justifyContent={'center'}
   templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
@@ -157,8 +165,8 @@ const Results = ({curr}) => {
     />
   </GridItem>
 </Grid>
-
- {/* table 1 */}
+      
+  {/* table 1 */}
 
   <Grid
       gap={6}
@@ -194,7 +202,7 @@ const Results = ({curr}) => {
       </GridItem>
       </Grid>
 
-      {/* table 2 */}
+  {/* table 2 */}
 
   <Grid
       gap={6}
@@ -229,13 +237,9 @@ const Results = ({curr}) => {
         </Box>
       </GridItem>
       </Grid>
-
-        </>
-    } else if (page == 1) {
-      return <>
-        <Heading as='h2' size='lg' textAlign='center' marginTop='30px'>Discussion</Heading>
+      
       </>
-    }
+    } 
   }
 
   return (
@@ -258,7 +262,7 @@ const Results = ({curr}) => {
         {renderContent()}
         </section>
       {page > 0 && <Button leftIcon={<ArrowBackIcon/>} className='back' onClick={() => setPage(page - 1)}>Back</Button>}
-      {page < 1 && <Button rightIcon={<ArrowForwardIcon/>} className='next' onClick={() => setPage(page + 1)}>Next</Button>}
+      {page < 2 && <Button rightIcon={<ArrowForwardIcon/>} className='next' onClick={() => setPage(page + 1)}>Next</Button>}
     </>
   )
 }
