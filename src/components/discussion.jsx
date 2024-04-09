@@ -108,7 +108,7 @@ const Discussion = ({curr}) => {
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Figure 3: Beta Wave Synchrony</ModalHeader>
+        <ModalHeader>Figure 3: Synchrony Levels in Different ROIs (CCorr vs. Hz)</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <Image src={figure3} alt="Beta Wave Synchrony" />

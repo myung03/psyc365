@@ -226,7 +226,7 @@ const Results = ({curr}) => {
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Figure 2: Beta Synchrony Over Time</ModalHeader>
+          <ModalHeader>Figure 2: Wave Synchrony Over Time</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Image src={figure4} alt="Beta Synchrony Over Time" />
