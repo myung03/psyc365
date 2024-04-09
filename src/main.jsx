@@ -21,7 +21,7 @@ const Main = () => {
 
     return (<div>
          {showElement ? <div></div> : <div className={showElement ? 'hide splash_flex' : 'splash_flex'}>
-        <Heading id="center" title="LOADING RESEARCH GUIDE"></Heading>
+        <Heading id="center" title="Best viewed on desktop/laptop!"></Heading>
         <Spinner  emptyColor='gray.100' size='xl'/>
               </div>}
               <div className={disElement ? 'show' : 'static_hide'}>
