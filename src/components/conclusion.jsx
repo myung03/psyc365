@@ -65,7 +65,7 @@ const Conclusion = ({curr}) => {
         {steps.map((step, index) => (
         <Step key={index}>
           <StepIndicator>
-            <StepStatus
+            <StepStatus 
               complete={<StepIcon />}
               incomplete={<StepNumber />}
               active={<StepNumber />}
